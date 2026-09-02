@@ -1,5 +1,5 @@
 # yargitay-rag-backend
-# yargitay-rag-backend
+
 
 Yargıtay kararları üzerinde soru-cevap yapabilen RAG uygulamasının backend'i.
 
