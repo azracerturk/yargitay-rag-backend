@@ -44,7 +44,17 @@ Tablolar:
 
 
 ## Veri Toplama ve İndeksleme
-(yakında)
+Yargıtay karar arama sitesinden (karararama.yargitay.gov.tr) veri çekiliyor.
 
+Not: Site, bulut sunucu IP'lerini (Azure/Codespaces) engellediği için veri toplama scripti (main.py) yerel bir bilgisayardan çalıştırılıp kararlar.json dosyası üretildi, ardından bu depoya yüklendi.
+
+İndeksleme (indeksle.py):
+- kararlar.json okunur, geçersiz/placeholder içerikler filtrelenir
+- Her karar 'kararlar' tablosuna yazılır
+- Karar metni ~800 karakterlik parçalara bölünür (100 karakter örtüşme ile)
+- Her parça embed edilir (şu an geçici/rastgele vektör, LiteLLM API anahtarı geldiğinde gerçek embedding'e geçilecek) ve 'parcalar' tablosuna yazılır
+- Veri yüklendikten sonra pgvector HNSW indeksi oluşturulur
+
+Toplam: 183 karar, 2919 parça
 ## Uç Noktalar
 (yakında)
