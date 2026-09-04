@@ -57,4 +57,6 @@ Not: Site, bulut sunucu IP'lerini (Azure/Codespaces) engellediği için veri top
 
 Toplam: 183 karar, 2919 parça
 ## Uç Noktalar
-(yakında)
+
+Şu an fonksiyon seviyesinde çalışıyor, FastAPI endpoint'lerine Aşama 6'da dönüştürülecek:
+- arama.py -> en_yakin_parcalari_bul(soru, limit): soruya en yakın N parçayı döndürür (modelsiz test için)
