@@ -56,7 +56,6 @@ Not: Site, bulut sunucu IP'lerini (Azure/Codespaces) engellediği için veri top
 - Veri yüklendikten sonra pgvector HNSW indeksi oluşturulur
 
 Toplam: 183 karar, 2919 parça
-## Uç Noktalar
 
 ## Uç Noktalar
 
