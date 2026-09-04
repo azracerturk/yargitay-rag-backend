@@ -3,8 +3,8 @@
 
 Yargıtay kararları üzerinde soru-cevap yapabilen RAG uygulamasının backend'i.
 
-Proje repo'su: (link eklenecek)
-Frontend repo'su: (link eklenecek)
+Proje repo'su: https://github.com/azracerturk/yargitay-rag-proje
+Frontend repo'su: https://github.com/azracerturk/yargitay-rag-frontend
 
 ## Teknolojiler
 - Python
