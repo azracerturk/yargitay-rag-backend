@@ -14,6 +14,8 @@ Frontend repo'su: https://github.com/azracerturk/yargitay-rag-frontend
 ## Kurulum
 
 1. Depoyu klonla ve içine gir:
+   git clone https://github.com/azracerturk/yargitay-rag-frontend
+   cd yargitay-rag-frontend
 
 2. Sanal ortam oluştur ve aktive et:
 
