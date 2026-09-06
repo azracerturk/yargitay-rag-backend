@@ -12,18 +12,22 @@ Frontend repo'su: https://github.com/azracerturk/yargitay-rag-frontend
 - LiteLLM (embedding ve LLM çağrıları için)
 
 ## Kurulum
-
 1. Depoyu klonla ve içine gir:
-   git clone https://github.com/azracerturk/yargitay-rag-frontend
-   cd yargitay-rag-frontend
+   git clone https://github.com/azracerturk/yargitay-rag-backend
+   cd yargitay-rag-backend
 
 2. Sanal ortam oluştur ve aktive et:
+   python -m venv venv
+   source venv/bin/activate
 
 3. Bağımlılıkları kur:
+   pip install fastapi uvicorn psycopg2-binary requests beautifulsoup4
 
-4. `.env.example` dosyasını `.env` olarak kopyala ve kendi bilgilerinle doldur:
+4. .env.example dosyasını .env olarak kopyala:
+   cp .env.example .env
 
 5. Uygulamayı çalıştır:
+   uvicorn api:app --reload --host 0.0.0.0 --port 8000
 
 ## Veritabanı Hazırlığı
 PostgreSQL + pgvector Docker ile çalıştırılıyor:
@@ -60,7 +64,9 @@ Not: Site, bulut sunucu IP'lerini (Azure/Codespaces) engellediği için veri top
 Toplam: 183 karar, 2919 parça
 
 ## Uç Noktalar
-
+FastAPI ile gerçek HTTP endpoint'leri olarak sunuluyor (api.py):
+- POST /sor: soruyu alır, ilgili parçaları bulur, LLM ile cevap üretir, cevap + kaynak kararlar listesini döndürür
+- POST /ara: modelsiz test endpoint'i, sadece bulunan parçaları döndürür
 Şu an fonksiyon seviyesinde çalışıyor, FastAPI endpoint'lerine Aşama 6'da dönüştürülecek:
 - arama.py -> en_yakin_parcalari_bul(soru, limit): soruya en yakın N parçayı döndürür (modelsiz test için)
 - cevap.py -> soru_sor(soru, limit): parçaları bulur, prompt şablonuna yerleştirir, model çağrısı yapar (şu an geçici stub, LiteLLM API anahtarı geldiğinde gerçek çağrıya geçilecek) ve cevap + kaynak kararlar listesini döndürür
